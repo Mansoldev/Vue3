@@ -9,6 +9,17 @@ import './assets/main.css'
 const app = createApp(App)
 
 app.use(router)
-app.use(VueQueryPlugin)
+//app.use(VueQueryPlugin)
+
+VueQueryPlugin.install(app, {
+    queryClientConfig: {
+        defaultOptions: {
+            queries: {
+                staleTime: 1000 * 120, //2 minutes queries in cache,
+                refetchOnReconnect: 'always' //On reconnect the app > all queries will be launch again
+            }
+        }
+    }
+})
 
 app.mount('#app')
