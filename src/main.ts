@@ -4,11 +4,7 @@ import { VueQueryPlugin } from '@tanstack/vue-query'
 import App from './App.vue'
 import router from './router'
 
-import store from '@/store/store'
-
 import './assets/main.css'
-
-store.startLoadingPokemons()
 
 const app = createApp(App)
 
