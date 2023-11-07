@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import store from '@/store/store'
+import PokemonCardList from '../components/PokemonCardList.vue';
 
-const pokemonStore = store;
+//store.startLoadingPokemons()
 </script>
 
 <template>
