@@ -5,10 +5,15 @@ import type { RouterLink } from '@/router/list-routes';
 import { pokemonRoute } from '../router';
 
 const routeLinks: RouterLink[] = pokemonRoute.children!.map(({ name, path, props }) => {
+    const { title, visible} = props as { title: string, visible: boolean }
+
     return {
         name: name?.toString() ?? '',
-        path: path,
-        title: (props as { title: string}).title,
+        path,
+        //title: (props as { title: string}).title,
+        //visible: (props as { visible: boolean}).visible,
+        title,
+        visible,
     }
 });
 </script>

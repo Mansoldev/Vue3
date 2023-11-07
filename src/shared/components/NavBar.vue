@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed, toRef } from 'vue';
 import type { RouterLink } from '@/router/list-routes';
 
 interface Props {
@@ -7,10 +8,14 @@ interface Props {
     isSecondary?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
     title: 'CompoApp',
     isSecondary: false
 });
+
+//const links = toRef(props.links.filter(link => link.visible));
+// const links = toRef(props, 'links');
+const links = computed(() => props.links.filter(link => link.visible))
 </script>
 
 <template>
