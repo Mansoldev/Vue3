@@ -4,7 +4,7 @@ import type { RouterLink } from '@/router/list-routes';
 interface Props {
     title?: string;
     links: RouterLink[];
-    isSecondary: boolean;
+    isSecondary?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
