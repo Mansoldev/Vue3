@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>pokemon list</h1>
+        <h2>pokemon list</h2>
     </div>
 </template>

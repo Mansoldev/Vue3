@@ -4,17 +4,21 @@ import type { RouterLink } from '@/router/list-routes';
 interface Props {
     title?: string;
     links: RouterLink[];
+    isSecondary: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
-    title: 'CompoApp'
+    title: 'CompoApp',
+    isSecondary: false
 });
 </script>
 
 <template>
     <nav>
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="25" height="25" />
-        <span v-if="$props.title" class="appTitle">{{ title }}</span>
+        <template v-if="!$props.isSecondary">
+            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="25" height="25" />
+            <span v-if="$props.title" class="appTitle">{{ title }}</span>
+        </template>
 
         <RouterLink v-for="link in links" :to="link.path" :key="link.name">
             {{ link.title }}
@@ -50,10 +54,10 @@ nav a {
 nav a:first-of-type {
     border: 0;
 }
-nav a.router-link-exact-active {
+nav a.router-link-active {
     color: var(--color-text);
 }
-nav a.router-link-exact-active:hover {
+nav a.router-link-active:hover {
     background-color: transparent;
 }
 </style>

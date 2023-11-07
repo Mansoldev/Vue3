@@ -1,5 +1,22 @@
+<script setup lang="ts">
+import NavBar from '@/shared/components/NavBar.vue'
+import type { RouterLink } from '@/router/list-routes';
+
+import { pokemonRoute } from '../router';
+
+const routeLinks: RouterLink[] = pokemonRoute.children!.map(({ name, path, props }) => {
+    return {
+        name: name?.toString() ?? '',
+        path: path,
+        title: (props as { title: string}).title,
+    }
+});
+</script>
+
 <template>
     <div>
-        <h1>pokemon layout</h1>
+        <NavBar is-secondary :links="routeLinks"/>
+
+        <RouterView />
     </div>
 </template>
