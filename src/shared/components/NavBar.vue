@@ -42,17 +42,16 @@ nav {
 .appTitle {
     margin-right: 10px;
 }
-a {
-    margin-right: 5px;
-}
 
 nav a {
     display: inline-block;
     padding: 0 1rem;
+    margin-right: 5px;
     border-left: 1px solid var(--color-border);
 }
 nav a:first-of-type {
     border: 0;
+    margin-right: 0;
 }
 nav a.router-link-active {
     color: var(--color-text);
