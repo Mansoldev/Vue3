@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import pokemonApi from '../api/pokemonApi';
-import type { PokemonListResponse } from '../interfaces/pokemons-list.response';
+import { getPokemons } from '../helpers/get-pokemons';
 
-pokemonApi.get<PokemonListResponse>('/pokemon?limit=50')
-    .then( resp => console.log(resp.data.results))
+getPokemons().then( data => console.log(data))
 </script>
 
 <template>
