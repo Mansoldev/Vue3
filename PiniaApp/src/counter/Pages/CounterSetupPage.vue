@@ -17,7 +17,7 @@ const { count, squareCount } = storeToRefs( counterStore );
     <button @click="counterStore.increment()">+1</button>
     <button @click="counterStore.incrementBy(2)">+2</button>
     <button @click="counterStore.incrementBy(5)">+5</button>
-    <button @click="counterStore.$reset()">Reset</button>
+    <!--<button @click="counterStore.$reset()">Reset</button>--> <!-- $reset no funca con el Setup -->
 
     <CounterSetupValue/>
 </template>
