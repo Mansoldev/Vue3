@@ -5,7 +5,6 @@ import CounterSetupValue from "../components/CounterSetupValue.vue";
 
 const counterStore = useCounterSetupStore()
 const { count, squareCount } = storeToRefs( counterStore );
-//const { increment, incrementBy, $reset} = counterStore; //$reset explota de esta forma
 </script>
 
 <template>
