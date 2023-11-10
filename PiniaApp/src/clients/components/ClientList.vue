@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import useClients from '../composables/useClients';
+//console.log(import.meta.env) Ver el environment
 
+useClients()
 </script>
 
 <template>
