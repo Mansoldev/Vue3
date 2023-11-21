@@ -10,7 +10,7 @@ const { isLoading, clients, currentPage, totalPages, getPage } = useClients()
 
 <template>
     <div>
-        <h1>Clients List</h1>
+        <h2>Clients List</h2>
 
         <ClientList :clients="clients"/>
 
