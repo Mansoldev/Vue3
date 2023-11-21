@@ -18,6 +18,9 @@ const useClients = () => {
         queryKey: ['clients?page=', currentPage],
         queryFn: () => getClients(currentPage.value),
         staleTime: 1000 * 60 //1 minute api call cache
+        // select(newClients) {
+        //     store.setClients(newClients)
+        // }
     })
 
     //When data change, update store clients
@@ -36,6 +39,11 @@ const useClients = () => {
         getPage(  page: number ) {
             store.setPage(page)
         },
+
+        //Getters
+        TotalPageNumbers: computed(
+            () => [...new Array(totalPages.value)].map((val, index) => index + 1)
+        )
     }
 }
 
