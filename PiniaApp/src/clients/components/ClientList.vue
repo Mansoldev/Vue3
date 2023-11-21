@@ -2,18 +2,18 @@
 import useClients from '../composables/useClients';
 //console.log(import.meta.env) Ver el environment
 
-useClients()
+const { clients } = useClients()
 </script>
 
 <template>
     <ul>
-        <li>
+        <li v-for="client of clients" :key="client.id">
             <RouterLink :to="{
                 name: 'client-id', 
-                params: {id: 1}
+                params: {id: client.id},
             }">
-                ClientName
-            </RouterLink>"
+                {{ client.name }}
+            </RouterLink>
         </li>
     </ul>
 </template>
