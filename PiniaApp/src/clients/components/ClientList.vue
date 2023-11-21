@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useClients from '../composables/useClients';
+import useClients from '@/clients/composables/useClients';
 //console.log(import.meta.env) Ver el environment
 
 const { clients } = useClients()
