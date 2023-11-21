@@ -30,7 +30,9 @@ const useClients = () => {
     return {
         //state
         isLoading, 
-        clients: store.clients
+        clients,
+        currentPage,
+        totalPages
     }
 }
 
