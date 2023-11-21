@@ -17,6 +17,7 @@ const useClients = () => {
     const { isLoading, data } = useQuery({
         queryKey: ['clients?page=', currentPage],
         queryFn: () => getClients(currentPage.value),
+        staleTime: 1000 * 60 //1 minute api call cache
         // select(newClients) {
         //     store.setClients(newClients)
         // }
